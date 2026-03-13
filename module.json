@@ -1,0 +1,17 @@
+{
+  "id": "strata-weaver-foundry-bridge",
+  "title": "Strata Weaver Bridge",
+  "description": "Brings Strata Weaver's dynamic weather, tactical overviews, and daily events directly into your Foundry VTT chat.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
+  "esmodules": ["dist/main.js"],
+  "styles": ["dist/styles.css"],
+  "authors": [
+    {
+      "name": "Strata Weaver"
+    }
+  ]
+}

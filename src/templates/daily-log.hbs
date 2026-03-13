@@ -1,0 +1,101 @@
+<div class="sw-chat-card">
+    <!-- Header -->
+    <div class="sw-header">
+        <h2 class="sw-title">{{dayString}}</h2>
+        <div class="sw-gold-separator"></div>
+    </div>
+
+    <!-- Forecast Section -->
+    <div class="sw-section sw-forecast">
+        <div class="sw-forecast-image-container">
+            <img src="modules/strata-weaver-foundry-bridge/dist/assets/forecast/{{forecast.image}}" alt="Weather" />
+        </div>
+        <div class="sw-forecast-data">
+            {{#each forecast.rows}}
+            <div class="sw-row">
+                <i class="{{this.icon}}"></i>
+                <div class="sw-row-text {{#if this.isMuted}}sw-text-muted{{/if}}">
+                    <span class="{{#if this.color}}sw-text-{{this.color}}{{/if}}">{{this.text}}</span>
+                    {{#if this.subtext}}<span class="sw-text-muted sw-ml-1">{{this.subtext}}</span>{{/if}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Tactical Overview -->
+    <div class="sw-section">
+        <!-- Region Header -->
+        <div class="sw-region-header">
+            <h4 class="sw-region-name">{{tactical.regionName}}</h4>
+            <p class="sw-region-desc">{{tactical.biomeDescription}}</p>
+        </div>
+
+        <!-- Survival Radar -->
+        <h5 class="sw-sub-heading">Survival Radar</h5>
+        <div class="sw-tactical-grid">
+            <div class="sw-tac-item">
+                <span class="sw-label"><i class="fas fa-tint sw-icon-blue"></i> Water</span>
+                <span class="sw-val">{{tactical.survival.water}}</span>
+            </div>
+            <div class="sw-tac-item">
+                <span class="sw-label"><i class="fas fa-road sw-icon-amber"></i> Road</span>
+                <span class="sw-val">{{tactical.survival.road}}</span>
+            </div>
+            <div class="sw-tac-item sw-full-width sw-flex-between">
+                <span class="sw-label"><i class="fas fa-utensils sw-icon-muted"></i> Resources</span>
+                <div class="sw-flex-center">
+                    <span class="sw-val sw-text-{{tactical.survival.hunting.color}}">{{tactical.survival.hunting.label}}</span>
+                    {{#if tactical.survival.hunting.predationRisk}}
+                        <i class="fas fa-exclamation-triangle sw-danger-icon" title="High Predation Risk"></i>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Stealth & Cover -->
+        <h5 class="sw-sub-heading">Stealth & Cover</h5>
+        <div class="sw-tactical-grid">
+            <div class="sw-tac-item sw-flex-between">
+                <span class="sw-label"><i class="fas fa-shield-alt sw-icon-muted"></i> Cover</span>
+                <span class="sw-val sw-text-{{tactical.stealth.cover.color}}">{{tactical.stealth.cover.level}}</span>
+            </div>
+            <div class="sw-tac-item sw-flex-between">
+                <span class="sw-label"><i class="fas fa-eye-slash sw-icon-muted"></i> Stealth</span>
+                <span class="sw-val sw-text-{{tactical.stealth.potential.color}}">{{tactical.stealth.potential.level}}</span>
+            </div>
+        </div>
+
+        <!-- Travel Physics -->
+        <div class="sw-flex-between sw-mt-2">
+            <h5 class="sw-sub-heading sw-mb-0">Travel Physics</h5>
+            <span class="sw-val sw-text-{{tactical.travel.color}}">{{tactical.travel.speed}} Speed</span>
+        </div>
+        <div class="sw-factors-container">
+            {{#each tactical.travel.factors}}
+                <div class="sw-factor-tag sw-factor-{{this.type}}">
+                    <span class="sw-factor-val">{{this.value}}</span>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Events -->
+    {{#if events.length}}
+    <div class="sw-section">
+        <h3 class="sw-subtitle sw-center">Daily Chronicle</h3>
+        <div class="sw-gold-separator sw-mb-2"></div>
+        <ul class="sw-events-list">
+            {{#each events}}
+            <li class="sw-event-item">
+                <div class="sw-event-bullet sw-bg-{{this.color}}"></div>
+                <div class="sw-event-content">
+                    <strong class="sw-text-{{this.color}}">{{this.title}}</strong>
+                    <p>{{this.desc}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/if}}
+</div>
