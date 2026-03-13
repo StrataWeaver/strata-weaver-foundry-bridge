@@ -7,8 +7,15 @@
     "minimum": "12",
     "verified": "13"
   },
-  "esmodules": ["dist/main.js"],
-  "styles": ["dist/styles.css"],
+  "url": "https://github.com/strataweaver/strata-weaver-foundry-bridge",
+  "manifest": "https://github.com/strataweaver/strata-weaver-foundry-bridge/releases/latest/download/module.json",
+  "download": "https://github.com/strataweaver/strata-weaver-foundry-bridge/releases/download/v1.0.0/strata-weaver-foundry-bridge.zip",
+  "esmodules": [
+    "dist/main.js"
+  ],
+  "styles": [
+    "dist/styles.css"
+  ],
   "authors": [
     {
       "name": "Strata Weaver"
