@@ -24,4 +24,4 @@ This is the official companion module for **Strata Weaver**, the ultimate worldb
 ## Compatibility
 
 * **Foundry VTT:** Version 12+ (Verified for v13)
-* **Strata Weaver:** v4.2.0+
+* **Strata Weaver:** v1.0.0-beta or higher.
